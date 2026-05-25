@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>ZombieBobNation Command Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+    :root {
+      --main-black: #000;
+      --main-yellow: #ffee00;
+      --main-pink: #cf589c;
+      --white: #fff;
+      --comic-shadow: 0 4px 0 #111, 0 1px 20px #000a;
+    }
+    body {
+      background: var(--main-black);
+      color: var(--main-yellow);
+      font-family: 'Impact', 'Arial Black', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 0.04em;
+      min-height: 100vh;
+    }
+    header {
+      background: var(--main-yellow);
+      color: var(--main-black);
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+      box-shadow: var(--comic-shadow);
+      border-bottom: 10px solid var(--main-black);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      line-height: 1;
+      font-family: inherit;
+      letter-spacing: 0.08em;
+      text-shadow: 2px 2px var(--main-black), 4px 4px var(--main-pink);
+    }
+    header p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0 0 0;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 2rem;
+    }
+    .card {
+      background: var(--main-black);
+      border: 4px solid var(--main-yellow);
+      border-radius: 18px;
+      box-shadow: var(--comic-shadow);
+      padding: 1.8rem 1.3rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02) rotate(-1deg);
+      box-shadow: 0 8px 30px var(--main-yellow), 0 1px 20px #000a;
+      z-index: 2;
+    }
+    .card h2 {
+      color: var(--main-pink);
+      margin-top: 0;
+      font-size: 1.35rem;
+      letter-spacing: 0.1em;
+      text-shadow: 2px 2px var(--main-yellow);
+      margin-bottom: 1rem;
+    }
+    .status-list, .task-list, .links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .status-dot {
+      font-size: 1.1em;
+      margin-right: 0.2em;
+      vertical-align: middle;
+      text-shadow: 2px 2px var(--main-yellow), 1px 2px var(--main-pink);
+    }
+    .status-dot.online { color: var(--main-yellow);}
+    .status-dot.offline { color: var(--main-pink);}
+    .task-completed {
+      text-decoration: line-through wavy var(--main-pink);
+      color: var(--main-yellow);
+    }
+    a {
+      color: var(--main-yellow);
+      text-decoration: underline;
+      font-weight: bold;
+      font-size: 1.07em;
+      text-shadow: 1px 1px var(--main-black);
+      transition: color 0.15s;
+    }
+    a:hover {
+      color: var(--main-pink);
+    }
+    /* Comic bubble effect for special highlights */
+    .bubble {
+      display: inline-block;
+      background: var(--main-pink);
+      color: var(--white);
+      padding: 0.15em 0.75em;
+      margin: 0 0.3em;
+      border-radius: 2em;
+      font-size: 0.95em;
+      box-shadow: var(--comic-shadow);
+      font-family: inherit;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .dashboard {
+        margin: 1rem 0.5rem;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ZOMBIEBOBNATION <span class="bubble">COMMAND CENTER</span></h1>
+    <p>Project Dashboard · <a href="https://github.com/ZombieBobNation/ZombieBobNation.github.io" target="_blank">View on GitHub</a></p>
+  </header>
+  <main class="dashboard">
+
+    <section class="card">
+      <h2>Status Monitor</h2>
+      <ul class="status-list">
+        <li><span class="status-dot online">●</span> Web Server: Online</li>
+        <li><span class="status-dot offline">●</span> Database: Offline</li>
+        <li><span class="status-dot online">●</span> GitHub Pages: Deployed</li>
+        <li><span class="status-dot online">●</span> Analytics: Connected</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Production Tasks</h2>
+      <ul class="task-list">
+        <li><input type="checkbox" checked disabled> <span class="task-completed">Set up GitHub repo</span></li>
+        <li><input type="checkbox"> Build landing page layout</li>
+        <li><input type="checkbox"> Connect analytics</li>
+        <li><input type="checkbox"> Add team member profiles</li>
+        <li><input type="checkbox"> Publish status page</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Quick Links</h2>
+      <ul class="links-list">
+        <li><a href="https://app.milanote.com/1WjEfn1ApAaG6p?p=QNYmC8qIito" target="_blank">Milanote Board</a></li>
+        <li><a href="https://github.com/ZombieBobNation/ZombieBobNation.github.io" target="_blank">GitHub Repo</a></li>
+        <li><a href="https://zombiebobnation.github.io/" target="_blank">Live Site</a></li>
+      </ul>
+    </section>
+    
+  </main>
+</body>
+</html>
